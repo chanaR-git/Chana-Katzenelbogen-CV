@@ -34,7 +34,6 @@
             line-height: 1.48;
         }
 
-        /* הגדרת רוחב מקסימלי של 1020px ושמירה על גובה A4 מדויק ללא גלישה */
         .a4-page {
             width: 100%;
             max-width: 1020px;
@@ -47,7 +46,6 @@
             overflow: hidden;
         }
 
-        /* מתיחת הריווח בכותרת */
         .header {
             padding: 26px 40px 22px 40px;
             border-bottom: 2px solid var(--primary);
@@ -113,7 +111,6 @@
             overflow: hidden;
         }
 
-        /* מרווח פנימי מעודכן למניעת צפיפות ומניעת גלישה, מתיחה מבוקרת כלפי מטה */
         .main-column {
             flex: 1.8;
             padding: 26px 40px;
@@ -126,7 +123,6 @@
             border-right: 1px solid var(--border-light);
         }
 
-        /* כוונון עדין של כותרות הסעיפים */
         .section-title {
             font-size: 1.15rem;
             font-weight: 800;
@@ -154,7 +150,6 @@
             line-height: 1.5;
         }
 
-        /* ריווח מוגדל קלות למילוי החלק הריק */
         .experience-item {
             margin-bottom: 22px;
         }
@@ -205,7 +200,6 @@
             font-weight: 700;
         }
 
-        /* מרווחי קבוצות הכישורים להתאמה מלאה של גובה הדף */
         .skills-group {
             margin-bottom: 15px;
         }
@@ -223,7 +217,6 @@
             line-height: 1.35;
         }
 
-        /* התאמת ריווח השכלה */
         .education-item {
             margin-bottom: 16px;
         }
@@ -262,7 +255,6 @@
             top: 0;
         }
 
-        /* מניעת עמוד שני ריק בהדפסה או שמירה כ-PDF */
         @media print {
             body {
                 background-color: #FFFFFF;
@@ -284,7 +276,7 @@
         <header class="header">
             <div class="header-content">
                 <h1>חנה קצנלנבוגן</h1>
-                <h2>Full Stack Developer</h2>
+                <h2>FULL STACK & AI DEVELOPER</h2>
             </div>
             <div class="contact-info">
                 <div><span>054-8544421</span> <i class="fas fa-mobile-alt"></i></div>
@@ -304,45 +296,43 @@
                         בצלילה לעומקם של קודים מורכבים, ניתוח ארכיטקטורה ופתרון בעיות שורש.
                         בעלת הבנה מעמיקה במבני נתונים, אלגוריתמים ותכנון מערכות מבוססות
                         נתונים תוך שקלול מראש של סקייליביליות (Scalability) ויציבות לטווח ארוך.
-                        מנוסה בעיבוד נתונים מקצה לקצה, אינטגרציה של פתרונות AI Generative
-                        ועבודת צוות בסביבות אג'יליות.               
+                        מנוסה בעיבוד נתונים מקצה לקצה, אינטגרציה של פתרונות Generative AI
+                        ועבודה בסביבות אג'יליות.               
                 </div>
 
                 <h3 class="section-title">ניסיון מעשי</h3>
                 
                 <div class="experience-item">
                     <div class="job-header">
-                        <span class="job-title">Full Stack Developer (התמחות)</span>
+                        <span class="job-title">Software & Data Developer (התמחות) - 2026</span>
                         <span class="company-name">פרויקט פנסיה, משרד החינוך</span>                      
                     </div>
                     <ul class="task-list">
-                        <li>פיתוח ותחזוקת מודולים מורכבים במערכת הפנסיה, בסביבות: <b> NET Core, EF Core, SQL Server, Angular.</b> תוך השתלבות בצוות פיתוח פעיל בארגון Enterprise.</li>
-                        <li>עבודה שוטפת עם תשתיות מבוססות ענן וניהול משימות וגרסאות דרך <b>Azure DevOps</b> בסביבת עבודה אג'ילית</li>
-                        <li>אחריות על שלמות הנתונים, ביצוע Reviews Code ושיתוף פעולה הדוק לפתרון באגים מורכבים.</li>                    
+                        <li>פיתוח ותחזוקת מודולים מורכבים במערכת הפנסיה, בסביבות: <b>NET, EF Core, SQL Server, Angular</b> תוך השתלבות בצוות פיתוח פעיל בארגון Enterprise.</li>
+                        <li>עבודה שוטפת עם תשתיות מבוססות ענן וניהול משימות וגרסאות דרך <b>Azure DevOps</b> בסביבת עבודה אג'ילית.</li>
+                        <li>אחריות על שלמות הנתונים, ביצוע Code Reviews ושיתוף פעולה הדוק לפתרון באגים מורכבים.</li>                    
                     </ul>
                 </div>
 
                 <div class="experience-item">
                     <div class="job-header">
                         <span class="job-title">פיתוח מערכות ופתרונות AI מקצה לקצה</span>
-                        <span class="company-name">במסגרת לימודי מה"ט ו-"Ultra code" </span>
+                        <span class="company-name">במסגרת לימודי מה"ט ו-"Ultra code"</span>
                     </div>
                     <ul class="task-list">
-                            <li><strong>אינטגרציה ופיתוח פתרונות AI:</strong> בניית סוכני בינה מלאכותית <strong>(Agents AI)</strong>
-                            ויישומים חדשניים מבוססי מודלי שפה גדולים <strong>(LLMs)</strong>, תוך מינוף פלטפורמות
-                            כמו Face Hugging וספריות מתקדמות</li>
-                            <li> <strong>תשתית ו-APIs:</strong> תכנון ופיתוח APIs REST ו-Microservices מאובטחים (ב-NET. / js.Node )לעיבוד נתונים ואינטגרציה בין מערכות, ניהול הרשאות מבוסס JWT.</li>
-                            <li><strong>ארכיטקטורה וביצועים:</strong> עבודה מעשית עם סביבות מכולות <strong>(Docker)</strong>, ניהול זיכרון מטמון עם <strong>Redis</strong> ואופטימיזציה של מסדי נתונים רלציוניים ו- NoSQL - עבודה עם <strong>MongoDB, SQL, Oracle</strong></li>
+                            <li><strong>אינטגרציה ופיתוח פתרונות AI:</strong> בניית סוכני בינה מלאכותית <strong>(AI Agents)</strong> ויישומים חדשניים מבוססי מודלי שפה גדולים <strong>(LLMs)</strong>, תוך מינוף פלטפורמות Hugging Face וספריות מתקדמות.</li>
+                            <li><strong>תשתית ו-APIs:</strong> תכנון ופיתוח REST APIs ו-Microservices מאובטח (ב-.NET / Node.js) לעיבוד נתונים ואינטגרציה בין מערכות, ניהול הרשאות מבוסס JWT.</li>
+                            <li><strong>ארכיטקטורה וביצועים:</strong> עבודה מעשית עם סביבות מכולות <strong>(Docker)</strong>, ניהול זיכרון מטמון עם <strong>Redis</strong> ואופטימיזציה של מסדי נתונים רלציוניים ו-NoSQL <strong>(SQL ברמה גבוהה, MongoDB, Oracle)</strong>.</li>
                     </ul>
                 </div>
 
-                <h3 class="section-title" style="margin-top: 15px;">יתרונות אישיים (Soft Skills)</h3>
+                <h3 class="section-title" style="margin-top: 15px;">יתרונות אישיים (SOFT SKILLS)</h3>
                 <div class="experience-item">
                     <ul class="task-list">
-                        <li><strong> ניתוח ופתרון בעיות מורכבות (Troubleshooting):</strong> יכולת מוכחת בצלילה מהירה לקוד קיים, הבנת לוגיקה סבוכה, איתור באגים מורכבים במערכות מבוזרות ופתרונם מהשורש.</li>
-                        <li><strong>עבודת צוות (Team Player):</strong> תקשורת בינאישית מעולה, שותפות ב - Code Reviews יסודיים ומחויבות חסרת פשרות לקוד נקי, קריא ו-Maintainable.</li>
-                        <li><strong> חשיבה ארכיטקטונית ומערכתית:</strong> תכנון ובניית רכיבים מתוך ראייה רחבה, הקפדה על ביצועים אופטימליים והתאמה של תשתית הנתונים לגידול עתידי (Scaling-out/up).</li>                    
-                        <li><strong>אחריות ומסירות:</strong>מוסר עבודה גבוה, עמידה ביעדים ובזמנים תוך שמירה על איכות הקוד והמערכת, ונכונות להתפתחות מקצועית מתמדת.</li>
+                        <li><strong>ניתוח ופתרון בעיות מורכבות (Troubleshooting):</strong> יכולת מוכחת בצלילה מהירה לקוד קיים, הבנת לוגיקה סבוכה, איתור באגים מורכבים במערכות מבוזרות ופתרונם מהשורש.</li>
+                        <li><strong>חשיבה ארכיטקטונית ומערכתית:</strong> תכנון ובניית רכיבים מתוך ראייה רחבה, הקפדה על ביצועים אופטימליים והתאמה של תשתית הנתונים לגידול עתידי (Scaling-out/up).</li>
+                        <li><strong>עבודת צוות ומקצועיות:</strong> תקשורת בינאישית מעולה, שותפות ב-Code Reviews יסודיים ומחויבות חסרת פשרות לקוד נקי, קריא ו-Maintainable.</li>
+                        <li><strong>אחריות ומסירות:</strong> מוסר עבודה גבוה, עמידה ביעדים ובזמנים תוך שמירה על איכות הקוד והמערכת, ונכונות להתפתחות מקצועית מתמדת.</li>
                     </ul>
                 </div>
 
@@ -353,39 +343,37 @@
                 <h3 class="section-title">כישורים טכנולוגיים</h3>
                 
                 <div class="skills-group">
-                    <div class="skills-title">Backend</div>
+                    <div class="skills-title">Languages & Core - Backend</div>
                     <div class="skills-content">
-                        <strong>C# (.NET, EF Core)</strong>, Java, Python (Django), Node.js<br>
-                        <span style="font-size: 0.75rem; color: var(--text-light);">Familiar with: <span dir="ltr">C, C++</span></span>
+                        <strong>C# (.NET), Entity Framework (EF Core)</strong>, Java, Node.js, C/C++, Python
                     </div>
                 </div>
 
                 <div class="skills-group">
-                    <div class="skills-title">Frontend</div>
+                    <div class="skills-title">Languages & Core - Frontend</div>
                     <div class="skills-content">
-                        <strong>React.js, Angular</strong>, JavaScript, HTML5, CSS3, SCSS
+                        <strong>React, Angular</strong>, JavaScript, TypeScript, HTML5, CSS3, SCSS
+                    </div>
+                </div>
+
+                <div class="skills-group">
+                    <div class="skills-title">AI & Generative AI</div>
+                    <div class="skills-content">
+                        <strong>LLMs Integration, AI Agents</strong>, Prompt Engineering, Text Analytics, Hugging Face, GenAI APIs, LangChain, LlamaIndex, Pinecone
                     </div>
                 </div>
 
                 <div class="skills-group">
                     <div class="skills-title">Databases & Caching</div>
                     <div class="skills-content">
-                        <strong>SQL</strong>, Oracle, MongoDB, SQLite<br>
-                        Caching: <strong>Redis</strong>
+                        Oracle, MongoDB, <strong>SQL (ברמה גבוהה)</strong>, SQLite, Caching: <strong>Redis</strong>
                     </div>
                 </div>
 
                 <div class="skills-group">
                     <div class="skills-title">Architecture & Cloud</div>
                     <div class="skills-content">
-                        Microservices vs Monolith, <strong>Docker</strong>, AWS, Scaling (Scale-up/out), Rate Limiting, JWT, REST API
-                    </div>
-                </div>
-
-                <div class="skills-group">
-                    <div class="skills-title">AI & Machine Learning</div>
-                    <div class="skills-content">
-                        <strong>AI Agents Development</strong>, LLMs, Hugging Face, Prompt Engineering, IDE AI Tools
+                        Microservices, <strong>Docker</strong>, AWS, Azure, JWT, REST API, Rate Limiting, Kafka, Event-Driven Architecture
                     </div>
                 </div>
 
@@ -399,19 +387,19 @@
                 <div class="skills-group">
                     <div class="skills-title">CS Fundamentals</div>
                     <div class="skills-content">
-                        OOP, Design Patterns, Algorithms & Data Structures (High Level), Operating Systems, Networking
+                        Algorithms & Data Structures, Graph Theory, OOP, Design Patterns, Operating Systems
                     </div>
                 </div>
 
                 <h3 class="section-title" style="margin-top: 15px;">השכלה</h3>
 
                 <div class="education-item">
-                    <div class="edu-degree">הכשרת Full Stack Development</div>
-                    <div class="edu-school">מה"ט בשילוב תוכנית "Ultra Code"</div>
+                    <div class="edu-degree">תעודת הנדסאית תוכנה (מה"ט)</div>
+                    <div class="edu-school">בשילוב תוכנית "Ultra Code"</div>
                     <ul class="edu-details">
                         <li><strong>סיום בהצטיינות.</strong></li>
-                        <li>הכשרה אינטנסיבית ומקיפה לפיתוח צד שרת ולקוח.</li>
-                        <li>קורסי העמקה: ארכיטקטורה מתקדמת, פיתוח AI, גרפים, מבני נתונים ואלגוריתמים ברמה גבוהה.</li>
+                        <li>הכשרה אינטנסיבית לפיתוח צד שרת, לקוח ומערכות נתונים.</li>
+                        <li>קורסי העמקה: ארכיטקטורה מתקדמת, פיתוח AI, תורת הגרפים, מבני נתונים ואלגוריתמים.</li>
                     </ul>
                 </div>
 
