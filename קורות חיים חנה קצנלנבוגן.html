@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>קורות חיים - חנה קצנלנבוגן</title>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #1A365D;
+            --secondary: #2B6CB0;
+            --text-main: #2D3748;
+            --text-light: #4A5568;
+            --bg-page: #FFFFFF;
+            --bg-sidebar: #F7FAFC;
+            --border-light: #E2E8F0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Assistant', sans-serif;
+            background-color: #EDF2F7;
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+            line-height: 1.48;
+        }
+
+        /* הגדרת רוחב מקסימלי של 1020px ושמירה על גובה A4 מדויק ללא גלישה */
+        .a4-page {
+            width: 100%;
+            max-width: 1020px;
+            height: 297mm;
+            max-height: 297mm;
+            background: var(--bg-page);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* מתיחת הריווח בכותרת */
+        .header {
+            padding: 26px 40px 22px 40px;
+            border-bottom: 2px solid var(--primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-content h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+        }
+
+        .header-content h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            text-align: left;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .contact-info div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: flex-end;
+        }
+
+        .contact-info i {
+            color: var(--secondary);
+            width: 16px;
+            text-align: center;
+        }
+
+        .contact-info a {
+            color: var(--secondary);
+            text-decoration: underline;
+            font-weight: 600;
+            transition: color 0.2s ease, text-decoration-color 0.2s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .resume-body {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        /* מרווח פנימי מעודכן למניעת צפיפות ומניעת גלישה, מתיחה מבוקרת כלפי מטה */
+        .main-column {
+            flex: 1.8;
+            padding: 26px 40px;
+        }
+
+        .sidebar-column {
+            flex: 1;
+            background-color: var(--bg-sidebar);
+            padding: 26px 28px;
+            border-right: 1px solid var(--border-light);
+        }
+
+        /* כוונון עדין של כותרות הסעיפים */
+        .section-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background-color: var(--border-light);
+            margin-right: 10px;
+        }
+
+        .profile-text {
+            font-size: 0.92rem;
+            color: var(--text-main);
+            margin-bottom: 24px;
+            text-align: justify;
+            line-height: 1.5;
+        }
+
+        /* ריווח מוגדל קלות למילוי החלק הריק */
+        .experience-item {
+            margin-bottom: 22px;
+        }
+
+        .job-header {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 6px;
+        }
+
+        .job-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .company-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .task-list {
+            list-style: none;
+            padding-right: 2px;
+        }
+
+        .task-list li {
+            position: relative;
+            padding-right: 16px;
+            margin-bottom: 6px;
+            font-size: 0.88rem;
+            color: var(--text-main);
+            line-height: 1.38;
+        }
+
+        .task-list li::before {
+            content: "•";
+            color: var(--secondary);
+            font-size: 1.25rem;
+            position: absolute;
+            right: 0;
+            top: -3px;
+        }
+
+        strong.highlight {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* מרווחי קבוצות הכישורים להתאמה מלאה של גובה הדף */
+        .skills-group {
+            margin-bottom: 15px;
+        }
+
+        .skills-title {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 2px;
+        }
+
+        .skills-content {
+            font-size: 0.82rem;
+            color: var(--text-main);
+            line-height: 1.35;
+        }
+
+        /* התאמת ריווח השכלה */
+        .education-item {
+            margin-bottom: 16px;
+        }
+
+        .edu-degree {
+            font-weight: 700;
+            font-size: 0.88rem;
+            color: var(--primary);
+        }
+
+        .edu-school {
+            font-weight: 600;
+            font-size: 0.82rem;
+            color: var(--secondary);
+            margin-bottom: 3px;
+        }
+
+        .edu-details {
+            list-style: none;
+        }
+
+        .edu-details li {
+            position: relative;
+            padding-right: 12px;
+            margin-bottom: 4px;
+            font-size: 0.78rem;
+            color: var(--text-light);
+            line-height: 1.35;
+        }
+
+        .edu-details li::before {
+            content: "▹";
+            color: var(--secondary);
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        /* מניעת עמוד שני ריק בהדפסה או שמירה כ-PDF */
+        @media print {
+            body {
+                background-color: #FFFFFF;
+                padding: 0;
+                margin: 0;
+            }
+            .a4-page {
+                box-shadow: none;
+                height: 297mm;
+                max-height: 297mm;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="a4-page">
+        
+        <header class="header">
+            <div class="header-content">
+                <h1>חנה קצנלנבוגן</h1>
+                <h2>Full Stack Developer</h2>
+            </div>
+            <div class="contact-info">
+                <div><span>054-8544421</span> <i class="fas fa-mobile-alt"></i></div>
+                <div><span>chanawork444@gmail.com</span> <i class="fas fa-envelope"></i></div>
+                <div><a href="https://github.com/chanaR-git" target="_blank">github.com/chanaR-git</a> <i class="fab fa-github"></i></div>
+                <div><span>ירושלים</span> <i class="fas fa-map-marker-alt"></i></div>
+            </div>
+        </header>
+
+        <div class="resume-body">
+            
+            <main class="main-column">
+                
+                <h3 class="section-title">פרופיל אישי</h3>
+                <div class="profile-text">
+                        מפתחת תוכנה בעלת חשיבה מערכתית ואנליטית יוצאת דופן, המצטיינת
+                        בצלילה לעומקם של קודים מורכבים, ניתוח ארכיטקטורה ופתרון בעיות שורש.
+                        בעלת הבנה מעמיקה במבני נתונים, אלגוריתמים ותכנון מערכות מבוססות
+                        נתונים תוך שקלול מראש של סקייליביליות (Scalability) ויציבות לטווח ארוך.
+                        מנוסה בעיבוד נתונים מקצה לקצה, אינטגרציה של פתרונות AI Generative
+                        ועבודת צוות בסביבות אג'יליות.               
+                </div>
+
+                <h3 class="section-title">ניסיון מעשי</h3>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <span class="job-title">Full Stack Developer (התמחות)</span>
+                        <span class="company-name">פרויקט פנסיה, משרד החינוך</span>                      
+                    </div>
+                    <ul class="task-list">
+                        <li>פיתוח ותחזוקת מודולים מורכבים במערכת הפנסיה, בסביבות: <b> NET Core, EF Core, SQL Server, Angular.</b> תוך השתלבות בצוות פיתוח פעיל בארגון Enterprise.</li>
+                        <li>עבודה שוטפת עם תשתיות מבוססות ענן וניהול משימות וגרסאות דרך <b>Azure DevOps</b> בסביבת עבודה אג'ילית</li>
+                        <li>אחריות על שלמות הנתונים, ביצוע Reviews Code ושיתוף פעולה הדוק לפתרון באגים מורכבים.</li>                    
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <span class="job-title">פיתוח מערכות ופתרונות AI מקצה לקצה</span>
+                        <span class="company-name">במסגרת לימודי מה"ט ו-"Ultra code" </span>
+                    </div>
+                    <ul class="task-list">
+                            <li><strong>אינטגרציה ופיתוח פתרונות AI:</strong> בניית סוכני בינה מלאכותית <strong>(Agents AI)</strong>
+                            ויישומים חדשניים מבוססי מודלי שפה גדולים <strong>(LLMs)</strong>, תוך מינוף פלטפורמות
+                            כמו Face Hugging וספריות מתקדמות</li>
+                            <li> <strong>תשתית ו-APIs:</strong> תכנון ופיתוח APIs REST ו-Microservices מאובטחים (ב-NET. / js.Node )לעיבוד נתונים ואינטגרציה בין מערכות, ניהול הרשאות מבוסס JWT.</li>
+                            <li><strong>ארכיטקטורה וביצועים:</strong> עבודה מעשית עם סביבות מכולות <strong>(Docker)</strong>, ניהול זיכרון מטמון עם <strong>Redis</strong> ואופטימיזציה של מסדי נתונים רלציוניים ו- NoSQL - עבודה עם <strong>MongoDB, SQL, Oracle</strong></li>
+                    </ul>
+                </div>
+
+                <h3 class="section-title" style="margin-top: 15px;">יתרונות אישיים (Soft Skills)</h3>
+                <div class="experience-item">
+                    <ul class="task-list">
+                        <li><strong> ניתוח ופתרון בעיות מורכבות (Troubleshooting):</strong> יכולת מוכחת בצלילה מהירה לקוד קיים, הבנת לוגיקה סבוכה, איתור באגים מורכבים במערכות מבוזרות ופתרונם מהשורש.</li>
+                        <li><strong>עבודת צוות (Team Player):</strong> תקשורת בינאישית מעולה, שותפות ב - Code Reviews יסודיים ומחויבות חסרת פשרות לקוד נקי, קריא ו-Maintainable.</li>
+                        <li><strong> חשיבה ארכיטקטונית ומערכתית:</strong> תכנון ובניית רכיבים מתוך ראייה רחבה, הקפדה על ביצועים אופטימליים והתאמה של תשתית הנתונים לגידול עתידי (Scaling-out/up).</li>                    
+                        <li><strong>אחריות ומסירות:</strong>מוסר עבודה גבוה, עמידה ביעדים ובזמנים תוך שמירה על איכות הקוד והמערכת, ונכונות להתפתחות מקצועית מתמדת.</li>
+                    </ul>
+                </div>
+
+            </main>
+
+            <aside class="sidebar-column">
+                
+                <h3 class="section-title">כישורים טכנולוגיים</h3>
+                
+                <div class="skills-group">
+                    <div class="skills-title">Backend</div>
+                    <div class="skills-content">
+                        <strong>C# (.NET, EF Core)</strong>, Java, Python (Django), Node.js<br>
+                        <span style="font-size: 0.75rem; color: var(--text-light);">Familiar with: <span dir="ltr">C, C++</span></span>
+                    </div>
+                </div>
+
+                <div class="skills-group">
+                    <div class="skills-title">Frontend</div>
+                    <div class="skills-content">
+                        <strong>React.js, Angular</strong>, JavaScript, HTML5, CSS3, SCSS
+                    </div>
+                </div>
+
+                <div class="skills-group">
+                    <div class="skills-title">Databases & Caching</div>
+                    <div class="skills-content">
+                        <strong>SQL</strong>, Oracle, MongoDB, SQLite<br>
+                        Caching: <strong>Redis</strong>
+                    </div>
+                </div>
+
+                <div class="skills-group">
+                    <div class="skills-title">Architecture & Cloud</div>
+                    <div class="skills-content">
+                        Microservices vs Monolith, <strong>Docker</strong>, AWS, Scaling (Scale-up/out), Rate Limiting, JWT, REST API
+                    </div>
+                </div>
+
+                <div class="skills-group">
+                    <div class="skills-title">AI & Machine Learning</div>
+                    <div class="skills-content">
+                        <strong>AI Agents Development</strong>, LLMs, Hugging Face, Prompt Engineering, IDE AI Tools
+                    </div>
+                </div>
+
+                <div class="skills-group">
+                    <div class="skills-title">DevOps & Tools</div>
+                    <div class="skills-content">
+                        Git, GitHub, <strong>Azure DevOps</strong>
+                    </div>
+                </div>
+
+                <div class="skills-group">
+                    <div class="skills-title">CS Fundamentals</div>
+                    <div class="skills-content">
+                        OOP, Design Patterns, Algorithms & Data Structures (High Level), Operating Systems, Networking
+                    </div>
+                </div>
+
+                <h3 class="section-title" style="margin-top: 15px;">השכלה</h3>
+
+                <div class="education-item">
+                    <div class="edu-degree">הכשרת Full Stack Development</div>
+                    <div class="edu-school">מה"ט בשילוב תוכנית "Ultra Code"</div>
+                    <ul class="edu-details">
+                        <li><strong>סיום בהצטיינות.</strong></li>
+                        <li>הכשרה אינטנסיבית ומקיפה לפיתוח צד שרת ולקוח.</li>
+                        <li>קורסי העמקה: ארכיטקטורה מתקדמת, פיתוח AI, גרפים, מבני נתונים ואלגוריתמים ברמה גבוהה.</li>
+                    </ul>
+                </div>
+
+                <div class="education-item">
+                    <div class="edu-degree">השכלה והעשרה מקצועית</div>
+                    <ul class="edu-details">
+                        <li><strong>מתמטיקה:</strong> מבחני סאלד מוגבר 5 יח"ל. קורסים נוספים: אלגברה ליניארית ובוליאנית, סטטיסטיקה וקומבינטוריקה.</li>
+                        <li><strong>אנגלית:</strong> מבחני סאלד מוגבר 5 יח"ל + תעודת "Easy English" לשליטה מקצועית וקריאת תיעוד.</li>
+                    </ul>
+                </div>
+
+            </aside>
+
+        </div>
+    </div>
+
+</body>
+</html>
