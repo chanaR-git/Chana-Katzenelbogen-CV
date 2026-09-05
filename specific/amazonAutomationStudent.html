@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chana Katzenelbogen - CV</title>
+    <style>
+        :root {
+            --primary-color: #1A365D;
+            --secondary-color: #2B6CB0;
+            --text-color: #2D3748;
+            --bg-light: #F7FAFC;
+            --border-color: #E2E8F0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            line-height: 1.35;
+            background-color: #f0f2f5;
+            padding: 10px 0;
+        }
+
+        .resume-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* Header */
+        .header {
+            background-color: white;
+            padding: 18px 30px 12px 30px;
+            border-bottom: 3px solid var(--primary-color);
+            text-align: center;
+        }
+
+        .name {
+            font-size: 24px;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 3px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .title {
+            font-size: 14px;
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 12.5px;
+            color: #4A5568;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Body Layout */
+        .resume-body {
+            display: flex;
+        }
+
+        .main-column {
+            flex: 1.8;
+            padding: 18px 22px;
+            border-right: 1px solid var(--border-color);
+        }
+
+        .sidebar-column {
+            flex: 1.1;
+            background-color: var(--bg-light);
+            padding: 18px 15px;
+        }
+
+        /* Sections */
+        .section-title {
+            font-size: 13.5px;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 2px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .section {
+            margin-bottom: 14px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Text Elements */
+        p {
+            font-size: 12.5px;
+            margin-bottom: 6px;
+            text-align: justify;
+        }
+
+        ul {
+            padding-left: 16px;
+            margin-bottom: 6px;
+        }
+
+        li {
+            font-size: 12.5px;
+            margin-bottom: 3px;
+        }
+
+        /* Experience, Projects & Education */
+        .item-header {
+            margin-bottom: 3px;
+        }
+
+        .item-title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .role-title {
+            font-weight: 700;
+            font-size: 13px;
+            color: var(--primary-color);
+        }
+
+        .links-group {
+            display: flex;
+            gap: 6px;
+            font-size: 11.5px;
+        }
+
+        .project-link {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        .org-name {
+            font-weight: 600;
+            color: var(--secondary-color);
+            font-size: 12.5px;
+        }
+
+        .tech-stack-tag {
+            font-size: 11.5px;
+            color: #4A5568;
+            font-style: italic;
+            margin-bottom: 3px;
+            display: block;
+        }
+
+        .date {
+            font-size: 11.5px;
+            color: #718096;
+            margin-bottom: 3px;
+            display: inline-block;
+        }
+
+        /* Sidebar Elements */
+        .skill-group {
+            margin-bottom: 11px;
+        }
+
+        .skill-group-title {
+            font-weight: 700;
+            font-size: 12.5px;
+            color: var(--secondary-color);
+            margin-bottom: 2px;
+            letter-spacing: 0.2px;
+        }
+
+        .skill-group-content {
+            font-size: 12px;
+            color: var(--text-color);
+            line-height: 1.4;
+        }
+
+        .skill-group-content strong {
+            color: var(--primary-color);
+        }
+
+        .edu-item {
+            margin-bottom: 11px;
+        }
+
+        .edu-title {
+            font-weight: 700;
+            font-size: 12.5px;
+            color: var(--primary-color);
+            margin-bottom: 1px;
+        }
+
+        .edu-desc {
+            font-size: 12px;
+            line-height: 1.35;
+            margin-top: 2px;
+        }
+
+        .edu-desc strong {
+            color: var(--text-color);
+        }
+
+        /* Print Settings */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .resume-container {
+                box-shadow: none;
+                width: 100%;
+                max-width: 100%;
+            }
+            .sidebar-column {
+                background-color: var(--bg-light) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .header {
+                border-bottom: 3px solid var(--primary-color) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="resume-container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="name">Chana Katzenelbogen</h1>
+            <div class="title">SOFTWARE DEVELOPER | AI DEVELOPER</div>
+            <div class="contact-info">
+                <div class="contact-item"> Jerusalem, Israel</div>
+                <div class="contact-item"> 054-8544421</div>
+                <div class="contact-item"> chanawork444@gmail.com</div>
+                <div class="contact-item"> <a href="https://github.com/chanaR-git" target="_blank" class="project-link">GitHub Profile - chanaR-git</a></div>
+            </div>
+        </header>
+
+        <!-- Body -->
+        <div class="resume-body">
+            
+            <!-- Main Column (Left) -->
+            <main class="main-column">
+                <div class="section">
+                    <h2 class="section-title">Personal Profile</h2>
+                    <p>
+                        Highly motivated <strong>3rd-year Software Engineering Student</strong> at <strong>Seminar HaChadash Merkaz Bais Yaakov Jerusalem</strong>, with strong analytical and systems-thinking skills, excelling at deep-dive debugging, troubleshooting system issues, and architecture analysis. Demonstrates a <strong>strong passion for rapid self-learning, high adaptability, and motivation</strong> to quickly master new domains, tools, and testing practices. Proficient in <strong>C# (.NET Core), Python, Java, and GenAI/LLM frameworks</strong>, with practical exposure to <strong>AWS cloud environments, C/C++</strong>, and software verification concepts. Recognized as a fast learner capable of bridging technical gaps independently to solve complex problems in Agile environments.
+                    </p>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">Practical Experience</h2>
+                    
+                    <div class="item-header">
+                        <div class="role-title">Software & Data Developer - Full-Stack (Internship)</div>
+                        <div class="org-name">Pension Project, Ministry of Education</div>
+                        <span class="date">2026</span>
+                    </div>
+                    <ul>
+                        <li>Developed and maintained complex enterprise-level software modules, applying <strong>Object-Oriented Design (OOD)</strong> principles utilizing <strong>C# (.NET Core), SQL Server</strong>, and EF Core</li>
+                        <li>Engineered end-to-end features with a strong emphasis on robust backend API development, system integration, and data architecture</li>
+                        <li>Conducted code reviews, maintained strict <strong>data integrity and software quality</strong>, and applied core validation methodologies to ensure system stability</li>
+                        <li><strong>Deep-dive debugging & troubleshooting:</strong> Collaborated with team members to analyze, trace, and resolve complex software and system errors</li>
+                    </ul>
+
+                    <div class="item-header" style="margin-top: 10px;">
+                        <div class="role-title">End-to-End System & AI Solutions Development</div>
+                        <div class="org-name">MAHAT & "Ultra Code" Program</div>
+                        <span class="date">2024 - 2026</span>
+                    </div>
+                    <ul>
+                        <li>Executed full software engineering cycles, transitioning system requirements into functional production-ready modules.</li>
+                        <li>Applied structured code architecture, dynamic logic, and verification routines across data-driven backend components.</li>
+                    </ul>
+                </div>
+
+                <!-- Featured Projects Section -->
+                <div class="section">
+                    <h2 class="section-title">Featured Projects</h2>
+                    
+                    <!-- Project 1: AI Portfolio & Web Automation -->
+                    <div class="item-header">
+                        <div class="role-title">Advanced Autonomous AI & Integration Showcases</div>
+                        <span class="tech-stack-tag">Tech Stack: Python, Playwright, Anthropic MCP SDK, LangChain, LlamaIndex, Cohere, Groq</span>
+                    </div>
+                    <ul>
+                        <li><strong>Multi-Agent Orchestration & Web Interaction (MCP + Playwright):</strong> Developed a multi-agent orchestrator integrating custom MCP servers with <strong>Playwright browser tools</strong> in <strong>Python</strong>, demonstrating initial hands-on exposure to script-driven web automation and dynamic interaction workflows. <a href="https://github.com/chanaR-git/WeatherForcast-MCP-using-playwright.git" class="project-link" target="_blank">[GitHub ↗]</a></li>
+                        <li><strong>AI-Assisted Knowledge Retrieval (RAG System):</strong> Designed an event-driven retrieval architecture in <strong>Python</strong> using LlamaIndex and Cohere for semantic indexing and structured querying of technical documentation. <a href="https://github.com/chanaR-git/Agentic-RAG-docs-assistant.git" class="project-link" target="_blank">[GitHub ↗]</a></li>
+                        <li><strong>Deterministic Workflow Management:</strong> Built LLM-based conversational agents using <strong>Python</strong> and LangChain with state memory checkpointers, highlighting strong programmatic execution logic. <a href="https://github.com/chanaR-git/Mini-NotebookLM-LangChain-Agent.git" class="project-link" target="_blank">[GitHub ↗]</a></li>
+                    </ul>
+
+                    <!-- Project 2: Backend Architecture -->
+                    <div class="item-header" style="margin-top: 10px;">
+                        <div class="item-title-row">
+                            <div class="role-title">Enterprise Distributed Ecosystem (Backend & Systems)</div>
+                            <div class="links-group">
+                                <a href="https://github.com/chanaR-git/Architecture-Showcase-API.git" class="project-link" target="_blank">[Backend API ↗]</a>
+                                <a href="https://github.com/chanaR-git/Chinese-sale-frontend.git" class="project-link" target="_blank">[Frontend UI ↗]</a>
+                            </div>
+                        </div>
+                        <div class="tech-stack-tag">Tech Stack: C# (.NET Core), EF Core, Redis, Apache Kafka, Docker, JWT</div>
+                    </div>
+                    <ul>
+                        <li><strong>Backend Architecture:</strong> Engineered a clean-code API structure based on <strong>Object-Oriented Design (OOD)</strong> and modular architecture.</li>
+                        <li><strong>Performance Optimization:</strong> Integrated <strong>Redis caching</strong> and <strong>Kafka messaging</strong> pipelines to optimize throughput and handle data streams effectively.</li>
+                    </ul>
+                </div> 
+            </main>
+
+            <!-- Sidebar Column (Right) -->
+            <aside class="sidebar-column">
+                <div class="section">
+                    <h2 class="section-title">Technical Skills</h2>
+                    
+                    <div class="skill-group">
+                        <div class="skill-group-title">Core Languages & Scripting</div>
+                        <div class="skill-group-content">
+                            <strong>Python (Scripting & Systems)</strong>, <strong>C# (.NET Core)</strong>, <strong>Java</strong>, Node.js, <strong>Bash / Shell Scripting</strong>, TypeScript, JavaScript, HTML5/CSS.
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-group-title">Language Familiarity</div>
+                        <div class="skill-group-content">
+                            C, C++.
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-group-title">Testing & Verification</div>
+                        <div class="skill-group-content">
+                            Familiarity with <strong>Test Case Fundamentals</strong>, <strong>Playwright Basics</strong>, <strong>Continuous Integration (CI) Concepts</strong>, and System Verification.
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-group-title">Cloud & Infrastructure</div>
+                        <div class="skill-group-content">
+                            Practical exposure to <strong>AWS (EC2 / Cloud Computing)</strong>, <strong>Docker</strong>, <strong>Git / GitHub</strong>, Azure DevOps, Linux basics.
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-group-title">AI & Generative AI</div>
+                        <div class="skill-group-content">
+                            <strong>Leveraging AI Capabilities</strong>, <strong>LangChain</strong>, <strong>LlamaIndex</strong>, <strong>Anthropic MCP</strong>, Prompt Engineering, GenAI APIs.
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-group-title">Databases & Caching</div>
+                        <div class="skill-group-content">
+                            <strong>SQL Server (Advanced)</strong>, Oracle, MongoDB, SQLite, Redis.
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-group-title">CS Fundamentals</div>
+                        <div class="skill-group-content">
+                            <strong>Algorithms & Data Structures (High Level)</strong>, <strong>Graph Theory</strong>, <strong>Object-Oriented Programming & Design (OOP / OOD)</strong>, Operating Systems, Design Patterns.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">Education</h2>
+                    
+                    <div class="edu-item">
+                        <div class="edu-title">Practical Software Engineer Diploma (MAHAT)</div>
+                        <div class="org-name" style="font-size: 11.5px;">Seminar HaChadash Merkaz Bais Yaakov Jerusalem | Combined with "Ultra Code" Program</div>
+                        <span class="date">2024 - Present (3rd Year Student)</span>
+                        <div class="edu-desc">
+                            • <strong>Currently in 3rd Year Studies</strong>; Passed intensive <strong>Ultra Code Examinations with distinction</strong>.<br>
+                            • <strong>Advanced CS Coursework:</strong> High-Level Data Structures & Algorithms, Graph Theory, Systems Architecture, AI Development.<br>
+                            • <strong>Key Strengths:</strong> Exceptional motivation, self-learning capability, and rapid technical adaptability.
+                        </div>
+                    </div>
+
+                    <div class="edu-item">
+                        <div class="edu-title">Professional Enrichment</div>
+                        <div class="edu-desc">
+                            • <strong>Mathematics:</strong> Szold Advanced Exams (5 units); Linear & Boolean Algebra, Statistics, Combinatorics<br>
+                            • <strong>English:</strong> Szold Advanced Exams (5 units) + "Easy English" Certificate – Strong technical documentation skills and solid professional communication.
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+</body>
+</html>
