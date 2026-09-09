@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>קורות חיים - חנה קצנלנבוגן</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Assistant', 'Segoe UI', 'Arial', sans-serif;
+            background-color: #FFFFFF;
+            color: #2D3748;
+            line-height: 1.35;
+            direction: rtl;
+            font-size: 10pt;
+        }
+
+        .a4-page {
+            width: 210mm;
+            height: 297mm;
+            background: #FFFFFF;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Header Table */
+        .header-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-bottom: 2px solid #1A365D;
+            padding: 16px 25px 12px 25px;
+        }
+
+        .header-right {
+            vertical-align: middle;
+            text-align: right;
+        }
+
+        .header-left {
+            vertical-align: middle;
+            text-align: left;
+            font-size: 8.5pt;
+            color: #4A5568;
+            line-height: 1.4;
+        }
+
+        .header-right h1 {
+            font-size: 22pt;
+            font-weight: 800;
+            color: #1A365D;
+            line-height: 1.1;
+            margin-bottom: 2px;
+            letter-spacing: -0.5px;
+        }
+
+        .header-right h2 {
+            font-size: 10.5pt;
+            font-weight: 700;
+            color: #2B6CB0;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-item {
+            margin-bottom: 2px;
+        }
+
+        .contact-item a {
+            color: #2B6CB0;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        /* Main Layout Table */
+        .body-table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        .main-column {
+            width: 64%;
+            vertical-align: top;
+            padding: 14px 20px 14px 22px;
+        }
+
+        .sidebar-column {
+            width: 36%;
+            vertical-align: top;
+            background-color: #F7FAFC;
+            padding: 14px 16px;
+            border-right: 1px solid #E2E8F0;
+        }
+
+        .section-title {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 10.5pt;
+            font-weight: 800;
+            color: #1A365D;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            border-bottom: 1px solid #E2E8F0;
+            padding-bottom: 3px;
+        }
+
+        .profile-text {
+            font-size: 8.5pt;
+            color: #2D3748;
+            margin-bottom: 10px;
+            text-align: justify;
+            line-height: 1.35;
+        }
+
+        .experience-item {
+            margin-bottom: 10px;
+        }
+
+        .job-header {
+            margin-bottom: 3px;
+        }
+
+        .job-title {
+            font-size: 9pt;
+            font-weight: 700;
+            color: #1A365D;
+            display: block;
+        }
+
+        .company-name {
+            font-size: 8.2pt;
+            font-weight: 600;
+            color: #2B6CB0;
+            display: block;
+        }
+
+        .task-list {
+            list-style: none;
+            padding-right: 0;
+            margin-top: 2px;
+        }
+
+        .task-list li {
+            position: relative;
+            padding-right: 12px;
+            margin-bottom: 3px;
+            font-size: 8pt;
+            color: #2D3748;
+            line-height: 1.3;
+        }
+
+        .task-list li::before {
+            content: "•";
+            color: #2B6CB0;
+            font-size: 10pt;
+            position: absolute;
+            right: 0;
+            top: -1px;
+        }
+
+        /* Sidebar Styles */
+        .skills-group {
+            margin-bottom: 8px;
+        }
+
+        .skills-title {
+            font-size: 8pt;
+            font-weight: 700;
+            color: #2B6CB0;
+            margin-bottom: 1px;
+        }
+
+        .skills-content {
+            font-size: 7.8pt;
+            color: #2D3748;
+            line-height: 1.25;
+        }
+
+        .education-item {
+            margin-bottom: 8px;
+        }
+
+        .edu-degree {
+            font-weight: 700;
+            font-size: 8.2pt;
+            color: #1A365D;
+        }
+
+        .edu-school {
+            font-weight: 600;
+            font-size: 7.8pt;
+            color: #2B6CB0;
+            margin-bottom: 2px;
+        }
+
+        .edu-details {
+            list-style: none;
+            padding-right: 0;
+        }
+
+        .edu-details li {
+            position: relative;
+            padding-right: 10px;
+            margin-bottom: 2px;
+            font-size: 7.5pt;
+            color: #4A5568;
+            line-height: 1.25;
+        }
+
+        .edu-details li::before {
+            content: "▸";
+            color: #2B6CB0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 7pt;
+        }
+
+        strong {
+            font-weight: 700;
+            color: #1A365D;
+        }
+        /* h1, h2, .section-title {
+            font-family: 'Heebo', 'Rubik', sans-serif;
+        } */
+    </style>
+</head>
+<body>
+
+    <div class="a4-page">
+        
+        <table class="header-table">
+            <tr>
+                <td class="header-right">
+                    <h1>חנה קצנלנבוגן</h1>
+                    <h2>מפתחת תוכנה ונתונים | מועמדת לתפקיד מרכז/ת תכניתנים (אגף BI)</h2>
+                </td>
+                <td class="header-left">
+                    <div class="contact-item">054-8544421 📱</div>
+                    <div class="contact-item">chanawork444@gmail.com ✉</div>
+                    <div class="contact-item"><a href="https://github.com/chanaR-git">github.com/chanaR-git</a> 🔗</div>
+                    <div class="contact-item">ירושלים 📍</div>
+                </td>
+            </tr>
+        </table>
+
+        <table class="body-table">
+            <tr>
+                <!-- Main Column (Right side in RTL) -->
+                <td class="main-column">
+                    
+                    <div class="section-title">פרופיל מקצועי</div>
+                    <div class="profile-text">
+                        מפתחת תוכנה בעלת רקע חזק ויסודי ב-SQL, עיבוד נתונים וחשיבה מערכתית. בעלת שליטה מעמיקה בכתיבת שאילתות מורכבות, פרוצדורות שמורות (Stored Procedures / PL-SQL), אופטימיזציה של בסיסי נתונים והנגשת מידע. מנוסה בפיתוח מערכות מורכבות בהתאם למפרטים ואפיונים דורשניים, לצד ניסיון מעשי באפיון וניתוח מערכות מקצה לקצה בפרויקטים יישומיים (כתיבת Use Cases, אפיון מסכים והגדרת צרכים). בעלת יחסי אנוש מעולים, יכולת עבודת צוות גבוהה, שיתוף קוד ותקשורת בינאישית מצוינת בסביבת עבודה אג'ילית (Agile).
+                    </div>
+
+                    <div class="section-title">ניסיון מקצועי</div>
+                    
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <span class="job-title">Software & Data Developer - 2026</span>
+                            <span class="company-name">פרויקט פנסיה, משרד החינוך</span>                      
+                        </div>
+                        <ul class="task-list">
+                            <li>פיתוח ותחזוקת מודולים מורכבים במערכת הפנסיה בסביבות: <strong>.NET, EF Core, Oracle (Oracle SQL / PL-SQL), Angular</strong>, תוך עבודה מדויקת מול מסמכי אפיון קיימים והתאמת הקוד לדרישות המערכת.</li>
+                            <li><strong>עבודה מתקדמת ב-Oracle SQL:</strong> כתיבת שאילתות SQL מורכבות, פרוצדורות שמורות (Stored Procedures / PL-SQL), בדיקות שלמות הנתונים (Data Integrity) ואופטימיזציה של בסיסי נתונים.</li>
+                            <li><strong>עבודת צוות ותקשורת בינאישית:</strong> עבודה שוטפת בצוות פיתוח בסביבה אג'ילית (Agile), ביצוע Code Reviews, שיתוף קוד, תיאום הדוק מול גורמי פיתוח ותפעול ופתרון באגים מורכבים.</li>
+                            <li>עבודה שוטפת מול תשתיות ענן וניהול משימות וגרסאות ב-<strong>Azure DevOps</strong>.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <span class="job-title">2024-2026 - פיתוח מערכות מקצה לקצה, ניתוח נתונים ופתרונות AI</span>
+                            <span class="company-name">במסגרת לימודים מורחבים בתוכנית "Ultra Code" ומה"ט</span>
+                        </div>
+                        <ul class="task-list">
+                            <li><strong>ניתוח ואפיון מערכות (מקצה לקצה):</strong> ביצוע אפיון מערכתי עצמאי בפרויקטים יישומיים, כולל הגדרת צרכים, כתיבת Use Cases, אפיון מסכים וממשקי משתמש, ותכנון תיקי תכנון טכניים.</li>
+                            <li><strong>תשתית, APIs ובסיסי נתונים:</strong> תכנון ופיתוח REST APIs ומערכות Microservices (.NET / Node.js), ניהול הרשאות JWT, ועבודה מעשית ברמה גבוהה מול SQL (Oracle, SQL Server, SQLite) ו-MongoDB.</li>
+                            <li><strong>אינטגרציה ופיתוח פתרונות AI:</strong> בניית סוכני בינה מלאכותית (AI Agents), מערכות RAG לתשאול מסמכים ואינטגרציה עם מודלי שפה (LLMs, LangChain, LlamaIndex, Docker, Redis).</li>
+                        </ul>
+                    </div>
+
+                    <div class="section-title" style="margin-top: 8px;">פרויקטים נבחרים (אפיון, ניתוח ופיתוח)</div>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <span class="job-title">מערכת אקו-סיסטם לניהול מבצעים ומכירות (Full-Stack)</span>
+                            <span class="company-name">Tech Stack: .NET, EF Core, Redis, Apache Kafka, Docker, JWT | Angular, RxJS, Signals</span>
+                        </div>
+                        <ul class="task-list">
+                            <li><strong>צד שרת (Backend):</strong> אפיון ופיתוח REST API מבוסס Clean Code, אופטימיזציה של ביצועים והורדת עומסים ממסד הנתונים באמצעות Redis Caching וצינורות הודעות ב-Apache Kafka, זיהוי משתמשים ע"י JWT ואבטחת מידע.</li>
+                            <li><strong>ממשק משתמש (Frontend):</strong> בניית ממשקי ניהול וחנות ב-Angular בעלי ביצועים גבוהים, תוך מינוף Signals לניהול State תגובתי ושימוש ב-RxJS Observables.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <span class="job-title">יישומי AI אוטונומיים ומערכות RAG מתקדמות</span>
+                            <span class="company-name">Tech Stack: Python, Anthropic MCP SDK, LangChain, LlamaIndex, Cohere, Playwright</span>
+                        </div>
+                        <ul class="task-list">
+                            <li><strong>WeatherForcast-MCP:</strong> סוכן AI המחובר לשרתי MCP ממומשים ב-Anthropic MCP SDK ומשלב אוטומציית דפדפן עם Playwright.</li>
+                            <li><strong>Agentic-RAG-docs-assistant:</strong> מערכת Agentic RAG לתשאול מסמכי תיעוד מבוססת LlamaIndex, מאפשרת חיפוש רגיל וסמנטי וייצוג ווקטורי ב-Cohere.</li>
+                            <li><strong>Mini-NotebookLM-LangChain:</strong> סוכן איסוף מידע מהרשת מבוסס LangChain עם זיכרון ומנגנון Human-In-The-Loop.</li>
+                        </ul>
+                    </div>
+
+                </td>
+
+                <!-- Sidebar Column (Left side in RTL) -->
+                <td class="sidebar-column">
+                    
+                    <div class="section-title">כישורים טכנולוגיים</div>
+                    
+                    <div class="skills-group">
+                        <div class="skills-title">Databases & SQL (ברמה גבוהה)</div>
+                        <div class="skills-content">
+                            <strong>Oracle SQL / PL-SQL (ברמה גבוהה)</strong>, SQL Server, Stored Procedures, שאילתות מורכבות, אופטימיזציה, SQLite, MongoDB, Caching: <strong>Redis</strong>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <div class="skills-title">ניתוח ואפיון מערכות</div>
+                        <div class="skills-content">
+                            ניתוח תהליכים, אפיון מסכים, כתיבת Use Cases, תיקי תכנון, עבודה עפ"י מסמכי אפיון מוגדרים
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <div class="skills-title">Languages & Core - Backend</div>
+                        <div class="skills-content">
+                            <strong>C# (.NET), Entity Framework (EF Core)</strong>, Java, Node.js, C/C++, Python
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <div class="skills-title">Languages & Core - Frontend</div>
+                        <div class="skills-content">
+                            <strong>React, Angular</strong>, JavaScript, TypeScript, HTML5, CSS3, SCSS
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <div class="skills-title">AI & Generative AI</div>
+                        <div class="skills-content">
+                            <strong>LLMs Integration, AI Agents</strong>, Prompt Engineering, Text Analytics, LangChain, LlamaIndex, Pinecone
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <div class="skills-title">Architecture & Cloud</div>
+                        <div class="skills-content">
+                            Microservices, <strong>Docker</strong>, Azure DevOps, AWS, Azure, JWT, Kafka, Event-Driven Architecture
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <div class="skills-title">DevOps & Tools</div>
+                        <div class="skills-content">
+                            Git, GitHub, <strong>Azure DevOps</strong>, Agile Methodology
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <div class="skills-title">CS Fundamentals</div>
+                        <div class="skills-content">
+                            Algorithms & Data Structures, Graph Theory, OOP, Design Patterns, Operating Systems
+                        </div>
+                    </div>
+
+                    <div class="section-title" style="margin-top: 10px;">השכלה והכשרה</div>
+
+                    <div class="education-item">
+                        <div class="edu-degree">לימודי תוכנה ומערכות מידע</div>
+                        <div class="edu-school">תכנית "Ultra Code" בשילוב מה"ט</div>
+                        <ul class="edu-details">
+                            <li>מעל 500 שעות לימוד אקדמיות/מקצועיות בתחום המחשוב.</li>
+                            <li>הכשרה אינטנסיבית בפיתוח צד שרת, לקוח, בסיסי נתונים ו-SQL.</li>
+                            <li>קורסי העמקה: ניתוח מערכות, ארכיטקטורת תוכנה, מבני נתונים ואלגוריתמים, תורת הגרפים.</li>
+                        </ul>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="edu-degree">השכלה נוספת</div>
+                        <ul class="edu-details">
+                            <li><strong>מתמטיקה:</strong> מבחני סאלד מוגבר 5 יח"ל, אלגברה ליניארית ובוליאנית, סטטיסטיקה וקומבינטוריקה.</li>
+                            <li><strong>אנגלית:</strong> מבחני סאלד מוגבר 5 יח"ל + תעודת "Easy English" לשליטה מקצועית.</li>
+                        </ul>
+                    </div>
+
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+</body>
+</html>
